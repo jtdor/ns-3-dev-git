@@ -63,6 +63,7 @@ netdevice_traits = {
     ns.BaseStationNetDevice: NetDeviceTraits(is_wireless=True),
     ns.LteUeNetDevice: NetDeviceTraits(is_wireless=True),
     ns.LteEnbNetDevice: NetDeviceTraits(is_wireless=True),
+    ns.CircuitSwitchNetDevice: NetDeviceTraits(is_virtual=True),
 }
 
 
