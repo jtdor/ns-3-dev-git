@@ -285,12 +285,10 @@ def filter_module_name(library: str) -> str:
     components = library.split("-")
 
     # Remove version-related prefixes
-    if "libns3" in components[0]:
+    if components[0].startswith("libns3"):
         components.pop(0)
-    if "dev" == components[0]:
-        components.pop(0)
-    if "rc" in components[0]:
-        components.pop(0)
+        if components[0] == "dev" or components[0].startswith(("RC", "rc")):
+            components.pop(0)
 
     # Drop build profile suffix and test libraries
     if components[-1] in [
