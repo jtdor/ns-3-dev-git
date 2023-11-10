@@ -7,6 +7,7 @@
 #
 # See test.py for more information.
 cpp_examples = [
+    ("rotating-circuit-switch", "True", "True"),
     ("simple-circuit-switch", "True", "True"),
 ]
 
