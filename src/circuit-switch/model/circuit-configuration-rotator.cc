@@ -20,6 +20,8 @@
 #include "ns3/circuit-switch-net-device.h"
 #include "ns3/simulator.h"
 
+#include <algorithm>
+#include <iterator>
 #include <utility>
 
 /**
@@ -80,7 +82,10 @@ CircuitConfigurationRotator::AddConfigurations(CircuitConfigurations configurati
     }
     else
     {
-        m_configs.insert(std::end(m_configs), std::begin(configurations), std::end(configurations));
+        m_configs.reserve(std::size(m_configs) + std::size(configurations));
+        std::move(std::begin(configurations),
+                  std::end(configurations),
+                  std::back_inserter(m_configs));
     }
 }
 
