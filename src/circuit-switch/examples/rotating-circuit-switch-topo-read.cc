@@ -67,7 +67,7 @@ namespace
  *   2  1  1
  * \endcode
  *
- * \see Details on the Inet topology file format:
+ * \see Details on the Inet topology file format (page 2 "OUTPUT FORMAT"):
  * https://web.archive.org/web/20210421092910/http://topology.eecs.umich.edu/inet/inet-3.0.pdf
  *
  * \param first Iterator pointing to the first link (return value of TopologyReader::LinksBegin()).
