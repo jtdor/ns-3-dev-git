@@ -38,7 +38,7 @@ NS_LOG_COMPONENT_DEFINE("CircuitConfigurationRotatorHelper");
 
 CircuitConfigurationRotatorHelper::CircuitConfigurationRotatorHelper()
 {
-    NS_LOG_FUNCTION_NOARGS();
+    NS_LOG_FUNCTION(this);
     m_factory.SetTypeId("ns3::CircuitConfigurationRotator");
 }
 
