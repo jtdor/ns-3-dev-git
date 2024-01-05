@@ -65,7 +65,7 @@ class CircuitConfigurationRotatorHelper
     void Install(Ptr<CircuitSwitchNetDevice> dev, CircuitConfigurations configurations = {}) const;
 
   private:
-    ObjectFactory m_deviceFactory;
+    ObjectFactory m_factory;
 };
 
 } // namespace ns3

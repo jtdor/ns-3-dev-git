@@ -39,14 +39,14 @@ NS_LOG_COMPONENT_DEFINE("CircuitConfigurationRotatorHelper");
 CircuitConfigurationRotatorHelper::CircuitConfigurationRotatorHelper()
 {
     NS_LOG_FUNCTION_NOARGS();
-    m_deviceFactory.SetTypeId("ns3::CircuitConfigurationRotator");
+    m_factory.SetTypeId("ns3::CircuitConfigurationRotator");
 }
 
 void
 CircuitConfigurationRotatorHelper::SetAttribute(std::string n1, const AttributeValue& v1)
 {
     NS_LOG_FUNCTION(this << n1);
-    m_deviceFactory.Set(n1, v1);
+    m_factory.Set(n1, v1);
 }
 
 void
@@ -55,7 +55,7 @@ CircuitConfigurationRotatorHelper::Install(Ptr<CircuitSwitchNetDevice> dev,
 {
     NS_LOG_FUNCTION(this << dev);
 
-    auto rot = m_deviceFactory.Create<CircuitConfigurationRotator>();
+    auto rot = m_factory.Create<CircuitConfigurationRotator>();
     rot->AddConfigurations(std::move(configurations));
     dev->AggregateObject(rot);
 }
