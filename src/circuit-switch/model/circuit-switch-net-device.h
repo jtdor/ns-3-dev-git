@@ -132,8 +132,6 @@ class CircuitSwitchNetDevice : public NetDevice
 
     // Inherited from the NetDevice base class
     void AddLinkChangeCallback(Callback<void> callback) override;
-    void DoDispose() override;
-    void DoInitialize() override;
     Address GetAddress() const override;
     Address GetBroadcast() const override;
     Ptr<Channel> GetChannel() const override;
@@ -180,6 +178,10 @@ class CircuitSwitchNetDevice : public NetDevice
                            PacketType packetType);
 
     void ReconfigurationDone();
+
+    // Inherited from the NetDevice base class
+    void DoDispose() override;
+    void DoInitialize() override;
 
   private:
     NetDevice::PromiscReceiveCallback m_promiscRxCallback;
